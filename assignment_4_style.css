@@ -1,0 +1,86 @@
+:root {
+  --ease-in-function: cubic-bezier(0.385, 0.81, 0.005, 1.005);
+}
+
+body {
+  background-color: RGB(106, 188, 191);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#top_div {
+  position: absolute;
+  top: 375px;
+}
+
+#bottom_div {
+  position: absolute;
+  bottom: 375px;
+}
+
+.small-circle {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.stick {
+  width: 10px;
+  height: 40px;
+  background-color: white;
+}
+
+#spin {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  animation: spin-circle 1.5s var(--ease-in-function) infinite;
+}
+
+@keyframes spin-circle {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(180deg);
+  }
+}
+
+#group_of_stick {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.stick:first-child {
+  animation: anime-stick 2s ease-in-out infinite;
+}
+.stick:nth-child(2) {
+  animation: anime-stick 2s 0.1s ease-in-out infinite;
+}
+.stick:nth-child(3) {
+  animation: anime-stick 2s 0.2s ease-in-out infinite;
+}
+.stick:nth-child(4) {
+  animation: anime-stick 2s 0.3s ease-in-out infinite;
+}
+.stick:last-child {
+  animation: anime-stick 2s 0.4s ease-in-out infinite;
+}
+
+@keyframes anime-stick {
+  0% {
+    transform: scaleY(1);
+  }
+  15% {
+    transform: scaleY(2);
+  }
+  30% {
+    transform: scaleY(1);
+  }
+}
